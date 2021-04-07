@@ -17,7 +17,7 @@ for plot_disk in $plot_disks; do
   else
     # the next line work, if entry for disk in /etc/fstab missing, we dont need to read anything from this disk, as mounting it woke it up also 
     if /usr/bin/grep "$plot_disk" /etc/fstab 1> /dev/null; then  
-      mount "$plot_disk"
+      /usr/bin/mount "$plot_disk"
       echo "...info:  mounted $plot_disk"
     fi
   fi
