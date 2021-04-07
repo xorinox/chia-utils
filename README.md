@@ -16,6 +16,7 @@ This are the temporary drives for plot creation. Could be single drives or raid-
 /chia/scratch/disk{n}
 
 ### Scripts
+The ./scripts is a clone of this repository: https://github.com/xorinox/chia-utils  
 /chia/scripts/config  
 /chia/scripts/install  
 /chia/scripts/runtime  
