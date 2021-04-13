@@ -4,11 +4,11 @@
 * LSI SAS 9300-8I 8 SAS/SATA HBA PCIe v3, 8x
 ## Temporary Storage (Scratch)
 ### SATA 6 Gb/s
-* Intel DC S3610 400 GB
-* Intel DC S3700 400 GB
-* Intel DC S3710 400/800 GB
-* Micron 5100 Max 480 GB
-* Seagate Nytro 1351 960 GB
+* Intel DC S3610 400 GB, 3000 TBW
+* Intel DC S3700 400 GB, 7300 TBW
+* Intel DC S3710 400/800 GB, 8300/16900 TBW
+* Micron 5100 Max 480 GB, 4380 TBW
+* Seagate Nytro 1351 960 GB, 3070 TBW
 ### NVME PCIe v3/4
 * Micron 9200 MAX 1.6 TB, 8800 TBW (U.2, PCIe v3)
 * Gigabyte Aorus 1 & 2 TB, 1800/3600 TBW (M.2, PCIe v4)
