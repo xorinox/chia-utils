@@ -4,7 +4,7 @@ Collection of my Chia Blockchain Utils
 For re-used without changing paths, scripts assume the following folder structure:
 
 ### Plots Disks
-This is where all the final plots are stored.  
+Paths for final plots are storage.  
 ```
 /chia
 ├──plots
@@ -15,7 +15,7 @@ This is where all the final plots are stored.
 
 
 ### Scratch Disks
-This are the temporary drives for plot creation. Could be single drives or raid-0 volumes.  
+Paths for temporary plots creation. Could be single drives or striped volumes (RAID-0).  
 ```
 /chia
 ├──scratch
