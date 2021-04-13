@@ -1,5 +1,6 @@
 # Parts List
-Components used listed below have been used to create various different plotters and farmers.
+Components listed below have been used to create various different plotters and farmers.
+
 ## Host Bust & RAID Adapters
 * Adaptec ASR 71605 16 Port SAS/SATA RAID Adapter PCIe v3, 8x
 * LSI SAS 9300-8I 8 SAS/SATA HBA PCIe v3, 8x
@@ -17,8 +18,12 @@ Components used listed below have been used to create various different plotters
 * Samsung SSD 980 PRO 500 GB, 300 TBW (M.2, PCIe v4)
 * Inland Performance 1 TB, 1800 TBW (M.2, PCIe v4)
 * Inland Premium 1 TB, 1800 TBW (M.2, PCIe v3)
-# Enclosures
+## Enclosures
 * Athena Power BP-15827SAC, 1x 5.25" External Drive Bay to 8x 2.5" SSD
-# Desktop Case Plotters
-# Server Case Farmers
-# DIY Farmers
+## CPUs
+* AMD 3600, 3600xt, 3700x, 3800x, 5800x, 2950x, 3960x
+* Intel 4770k, 10900x
+## Motherboards
+## Desktop Case Plotters
+## Server Case Farmers
+## DIY Farmers
