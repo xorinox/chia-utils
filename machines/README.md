@@ -1,6 +1,12 @@
-# Parts List
-Components listed below have been used to create various different plotters and farmers.
+# Architecture
+There are different approaches for plotting, with different price tags and other properties. There is no one and only correct design. They all have pros and cons.
+* use a lot of SATA/SAS SSD for temp
+* use a lot of SATA/SAS 10k or 15k hard drives for temp
+* use fewer NVME based flash drives for temp
+* use hard drives directly for plotting
 
+# Parts List
+Components listed below have been used to create various different plotters and farmers.  
 ## Adapters (HBA, RAID, U.2 to M.2, M.2 to PCIe)
 * Adaptec ASR 71605 16 Port SAS/SATA RAID PCIe v3, 8x
 * LSI SAS 9300-8I 8 SAS/SATA HBA PCIe v3, 8x
@@ -30,9 +36,4 @@ Components listed below have been used to create various different plotters and 
 ## Desktop Case Plotters
 ## Server Case Farmers
 ## DIY Farmers
-# Architecture
-There are different approaches for plotting, with different price tags and other properties. There is no one and only correct design. They all have pros and cons.
-* use a lot of SATA/SAS SSD for temp
-* use a lot of SATA/SAS 10k or 15k hard drives for temp
-* use fewer NVME based flash drives for temp
-* use hard drives directly for plotting
+
