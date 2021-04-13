@@ -1,9 +1,12 @@
 # Parts List
 Components listed below have been used to create various different plotters and farmers.
 
-## Host Bust & RAID Adapters
-* Adaptec ASR 71605 16 Port SAS/SATA RAID Adapter PCIe v3, 8x
+## Adapters (HBA, RAID, U.2 to M.2, M.2 to PCIe)
+* Adaptec ASR 71605 16 Port SAS/SATA RAID PCIe v3, 8x
 * LSI SAS 9300-8I 8 SAS/SATA HBA PCIe v3, 8x
+* Supermicro AOC-SLG3-2M2 PCIe v3, 8x (2x M.2 to PCIe)
+* Gigabyte GC-4XM2G4 PCIe v4, 16x (4x M.2 to PCIe)
+* SYBA SI-ADA40121 PCIe v3, 4x (U.2 SFF-8639 to M.2 M-Key)
 ## Temporary Storage (Scratch)
 ### SATA 6 Gb/s
 * Intel DC S3610 400 GB, 3000 TBW
