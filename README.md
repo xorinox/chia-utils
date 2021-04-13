@@ -34,3 +34,10 @@ The ./scripts directory is a clone of this repository: https://github.com/xorino
    ├──runtime
    ├──bin
 ```
+### Chia Code
+Separating the Chia installation for running the nodes, farmers and harvesters and plotting has the advantage of not needing to stop any plotting should a new version of Chia arrive that may address criticial issues for any of the daemon services. For plotting or farming, you might want to try an early beta version, with harming either farming or plotting at the same time.
+```
+/chia
+├──farming
+├──plotting
+```
