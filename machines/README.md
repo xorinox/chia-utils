@@ -1,6 +1,6 @@
 # Architecture
 There are different approaches for plotting, with different price tags and other properties. There is no one and only correct design. They all have pros and cons. If you choose an architecture with more than one machine (server) involved, sooner or later networking becomes important.
-## Questionaire to Inform Architecture
+## Questionaire to inform Architecture
 
 ## Temporary Storage (scratch)
 * use a lot of SATA/SAS SSD for temp
