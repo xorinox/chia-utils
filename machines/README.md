@@ -10,8 +10,12 @@
 * Micron 5100 Max 480 GB
 * Seagate Nytro 1351 960 GB
 ### NVME PCIe v3/4
-* Micron 9200 MAX 1.6 TB (U.2)
-* 
+* Micron 9200 MAX 1.6 TB, 8800 TBW (U.2, PCIe v3)
+* Gigabyte Aorus 1 & 2 TB, 1800/3600 TBW (M.2, PCIe v4)
+* Seagate Seagate FireCuda 520 2 TB, 3600 TBW (M.2, PCIe v4)
+* Samsung SSD 980 PRO 500 GB, 300 TBW (M.2, PCIe v4)
+* Inland Performance 1 TB, 1800 TBW (M.2, PCIe v4)
+* Inland Premium 1 TB, 1800 TBW (M.2, PCIe v3)
 # Desktop Case Plotters
 # Server Case Farmers
 # DIY Farmers
