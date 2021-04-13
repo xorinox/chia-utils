@@ -25,7 +25,7 @@ This are the temporary drives for plot creation. Could be single drives or raid-
 ```
 
 ### Scripts
-The ./scripts is a clone of this repository: https://github.com/xorinox/chia-utils  
+The ./scripts directory is a clone of this repository: https://github.com/xorinox/chia-utils  
 ```
 /chia
 ├──scripts
