@@ -6,7 +6,7 @@ There are different approaches for plotting, with different price tags and other
 * use a lot of SATA/SAS SSD for temp
 * use a lot of SATA/SAS 10k or 15k hard drives for temp
 * use fewer NVME based flash drives for temp
-* use hard drives directly for plotting
+* use only hard drives for plotting
 ## Final Storage (plots)
 # Parts List
 Components listed below have been used to create various different plotters and farmers.  
