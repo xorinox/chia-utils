@@ -1,5 +1,5 @@
 # Architecture
-There are different approaches for plotting, with different price tags and other properties. There is no one and only correct design. They all have pros and cons. If you choose an architecture with more than one machine (server) involved, sooner or later networking becomes important. For every build I put together I cared a lot preventing I/O contention.
+There are different approaches for plotting, with different price tags and other properties. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine (server) involved, sooner or later networking becomes important. For every build I put together I cared a lot preventing I/O contention.
 ## Questionaire to inform Architecture
 
 ## Temporary Storage (scratch)
