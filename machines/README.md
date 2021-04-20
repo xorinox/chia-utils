@@ -37,8 +37,8 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 * [Athena Power BP-15827SAC](https://www.newegg.com/athena-power-bp-15287sac-other/p/N82E16816119044), 1x 5.25" External Drive Bay to 8x 2.5" SSD
 ## CPUs
 ### AMD
-* 6 core 3600
-* 6 core 3600xt
+* [6 core 3600](https://amzn.to/32z3tw4) 65 W
+* [6 core 3600xt](https://amzn.to/2RPuucK) 95 W
 * [8 core 3700x](https://amzn.to/3aoL4GU) 65 W
 * [8 core 3800x](https://amzn.to/3xaoCec) 105 W
 * [8 core 5800x](https://amzn.to/3v3MgHq) 105 W
@@ -59,6 +59,7 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 * [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                                                                        
 * [MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
 ## Desktop Case Plotters
+I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair iCUE H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU. 
 ## Server Case Farmers
 ## DIY Farmers
 
