@@ -1,9 +1,12 @@
-DRAFT
-
-# Architecture
-There are different approaches for plotting, with different price tags and other features. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine (server) involved, sooner or later networking becomes important. For every build that I put together I cared a lot about minimizing I/O contention.
+DRAFT  
+There are different approaches for plotting, with different price tags and other features. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine involved, sooner or later networking becomes really important. For every build that I put together I cared a lot about minimizing I/O contention. I am using the term machine as a synonym for computer or server.
 ## Questionaire to inform Architecture
-
+* How many terabytes of Chia plot files are my goal?
+  * Does it fit into one case?
+  * Do I need several cases?
+    * How do I plan to transfer plots in between machines?
+* What do I do with the plotting capacity/compute power, when I am finished plotting?
+* How many computer parts do I already own and can be reused in any form?
 ## Temporary Storage (scratch)
 * use a lot of SATA/SAS SSD for temp
 * use a lot of SATA/SAS 10k or 15k hard drives for temp
@@ -59,7 +62,8 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 * [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                                                                        
 * [MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
 ## Desktop Case Plotters
-I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair iCUE H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU. 
+I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU. 
 ## Server Case Farmers
+My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
 ## DIY Farmers
 
