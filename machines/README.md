@@ -26,12 +26,12 @@ Components listed below have been used to create various different plotters and 
 * Micron 5100 Max 480 GB, 4380 TBW
 * Seagate Nytro 1351 960 GB, 3070 TBW
 ### NVME PCIe v3/4
-* Micron 9200 MAX 1.6 TB, 8800 TBW (U.2, PCIe v3)
-* Gigabyte Aorus 1 & 2 TB, 1800/3600 TBW (M.2, PCIe v4)
-* Seagate Seagate FireCuda 520 2 TB, 3600 TBW (M.2, PCIe v4)
-* Samsung SSD 980 PRO 500 GB, 300 TBW (M.2, PCIe v4)
-* Inland Performance 1 TB, 1800 TBW (M.2, PCIe v4)
-* Inland Premium 1 TB, 1800 TBW (M.2, PCIe v3)
+* [Micron 9200 MAX](https://amzn.to/3emr88H) 1.6 TB, 8800 TBW (U.2, PCIe v3)
+* [Gigabyte Aorus](https://amzn.to/3dyLEDD) 1 & 2 TB, 1800/3600 TBW (M.2, PCIe v4)
+* [Seagate Seagate FireCuda 520](https://amzn.to/2RMiLeR) 2 TB, 3600 TBW (M.2, PCIe v4)
+* [Samsung SSD 980 PRO](https://amzn.to/3xal3Vm) 500 GB, 300 TBW (M.2, PCIe v4)
+* [Inland Performance](https://amzn.to/3xkn7uf) 1 TB, 1800 TBW (M.2, PCIe v4)
+* [Inland Premium](https://amzn.to/3v3Ft0s) 1 TB, 1800 TBW (M.2, PCIe v3)
 ## Enclosures
 * Athena Power BP-15827SAC, 1x 5.25" External Drive Bay to 8x 2.5" SSD
 ## CPUs
@@ -44,7 +44,7 @@ Components listed below have been used to create various different plotters and 
 * [Asus TUF Gaming X570-PLUS (WI-FI)](https://amzn.to/3xcebqv)      
 * [Asus ROG Crosshair VIII Hero](https://amzn.to/3gpMHYw)                        
 * [Asus ROG Maximus XII Formula](https://amzn.to/3glpqqK)                             
-* Asus Z87-DELUXE/QUAD (pretty old, but you can find used ones on eBay)                                     
+* Asus Z87-Deluxe/Quad (pretty old, but you can find used ones on eBay)                                     
 * [Gigabyte TRX40 Aorus Master](https://amzn.to/3v9S4z1) 
 * [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                                                                        
 * [MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
