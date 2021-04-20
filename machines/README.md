@@ -39,6 +39,15 @@ Components listed below have been used to create various different plotters and 
 * Intel 4770k, 10900x
 ## Motherboards
 * [ASRock X570 Taichi](https://amzn.to/3dBQmAG)
+* [ASRock B550 Taichi](https://amzn.to/3aJhw75) 
+* [ASRock X399 Taichi](https://amzn.to/3tCxs2i)  
+* [Asus ROG Crosshair VIII Hero](https://amzn.to/3gpMHYw)                        
+* [Asus ROG Maximus XII Formula](https://amzn.to/3glpqqK)                             
+* Asus Z87-DELUXE/QUAD (pretty old, but you can find used ones on eBay)                                     
+* [Gigabyte TRX40 Aorus Master](https://amzn.to/3v9S4z1) 
+* [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                        
+* [Asus TUF Gaming X570-PLUS (WI-FI)](https://amzn.to/3xcebqv)                                                    
+* [MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
 ## Desktop Case Plotters
 ## Server Case Farmers
 ## DIY Farmers
