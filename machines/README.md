@@ -16,10 +16,10 @@ Components listed below have been used to create various different plotters and 
 * [Adaptec ASR 71605 16 Port](https://amzn.to/3v9Wztp) SAS/SATA RAID PCIe v3, 8x
 * [LSI SAS 9300-8I 8 Port](https://amzn.to/32wBddD) SAS/SATA HBA PCIe v3, 8x
 * [Supermicro AOC-SLG3-2M2](https://amzn.to/32DEiZf) PCIe v3, 8x (2x M.2 to PCIe)
-* Gigabyte GC-4XM2G4 PCIe v4, 16x (4x M.2 to PCIe)
-* SYBA SI-ADA40121 PCIe v3, 4x (U.2 SFF-8639 to M.2 M-Key)
+* [Gigabyte GC-4XM2G4](https://amzn.to/3xeNLEv) PCIe v4, 16x (4x M.2 to PCIe)
+* [SYBA SI-ADA40121](https://amzn.to/3suThzq) PCIe v3, 4x (U.2 SFF-8639 to M.2 M-Key)
 ## Temporary Storage (Scratch)
-I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied from as low as $55 per item to $399. The most expensive drives were the new 2 TB Gigabyte Aorus, the cheapest ones used Intel DC S3610 400 GB.
+I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied from as low as $55 per item to $399. The most expensive drives were the new from Amazon 2 TB Gigabyte Aorus, the cheapest ones used Intel DC S3610 400 GB (eBay and Amazon used).
 ### SATA 6 Gb/s
 * Intel DC S3610 400 GB, 3000 TBW
 * Intel DC S3700 400 GB, 7300 TBW
@@ -36,8 +36,17 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 ## Enclosures
 * [Athena Power BP-15827SAC](https://www.newegg.com/athena-power-bp-15287sac-other/p/N82E16816119044), 1x 5.25" External Drive Bay to 8x 2.5" SSD
 ## CPUs
-* AMD 3600, 3600xt, 3700x, 3800x, 5800x, 2950x, 3960x
-* Intel 4770k, 10900x
+### AMD
+* 6 core 3600
+* 6 core 3600xt
+* [8 core 3700x](https://amzn.to/3aoL4GU) 65 W
+* [8 core 3800x](https://amzn.to/3xaoCec) 105 W
+* [8 core 5800x](https://amzn.to/3v3MgHq) 105 W
+* [16 core 2950x](https://amzn.to/3n39v1q) 180 W
+* [24 core 3960x](https://amzn.to/3v5JSQn) 280 W
+### Intel
+* 4 core 4770k (pretty old, but you can find used ones on eBay)
+* [10 core 10900x](https://amzn.to/32xt74E) 125 W
 ## Motherboards
 * [ASRock X570 Taichi](https://amzn.to/3dBQmAG)
 * [ASRock B550 Taichi](https://amzn.to/3aJhw75) 
