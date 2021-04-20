@@ -38,6 +38,7 @@ Components listed below have been used to create various different plotters and 
 * AMD 3600, 3600xt, 3700x, 3800x, 5800x, 2950x, 3960x
 * Intel 4770k, 10900x
 ## Motherboards
+* [ASRock X570 Taichi](https://amzn.to/3dBQmAG)
 ## Desktop Case Plotters
 ## Server Case Farmers
 ## DIY Farmers
