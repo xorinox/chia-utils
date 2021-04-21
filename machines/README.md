@@ -13,6 +13,7 @@ There are different approaches for plotting, with different price tags and other
 * use fewer NVME based flash drives for temp
 * use only hard drives for plotting
 ## Final Storage (plots)
+* Hard drives various brands and sizes between 3 and 18 TB, SATA only, internal and shucked external.
 # Parts List
 Components listed below have been used to create various different plotters and farmers.  
 ## Adapters (HBA, RAID, U.2 to M.2, M.2 to PCIe)
@@ -51,7 +52,8 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 * 4 core 4770k (pretty old, but you can find used ones on eBay)
 * [10 core 10900x](https://amzn.to/32xt74E) 125 W
 ## RAM
-I use almost exclusively DDR4 from G.Skill
+I use exclusively DDR4 from G.Skill and Corsair. Both have a very good reputation within the gamer communiity. 
+### G.Skill
 * 16 GB 3600 MHz CL16 modules
 * 32 GB 3600 MHz CL16 modules
 ## Motherboards
