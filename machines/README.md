@@ -1,7 +1,7 @@
 DRAFT (this is a working document)  
 There are different approaches for plotting, with different price tags and other features. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine involved, sooner or later networking becomes really important. For every build that I put together I cared a lot about minimizing I/O contention. I am using the term machine as a synonym for computer or server.
 ## Questionaire to inform Architecture
-As for Chia plotting and system design, the goal should always be, how can I saturate the systems PCIe bandwidth with disk IO (scratch/temp writes). Do I have enough cores to saturate available IO bandwidth? Do I porvide enough disk IO to fully support all available cores?  
+As for Chia plotting and system design, the goal should be to saturate the systems PCIe bandwidth with disk IO (scratch/temp writes). Do I have enough cores to saturate available IO bandwidth? Do I porvide enough disk IO to fully support all available cores?  
 * How many terabytes of Chia plot files are my goal?
   * Do I need several computer/server cases?
     * How do I plan to transfer plots in between machines?
