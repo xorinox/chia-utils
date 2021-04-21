@@ -75,12 +75,31 @@ I use exclusively DDR4 from G.Skill and Corsair.
 I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU.
 ### 3700x based
 * 64 GB 3200 MHz RAM
+* 512 GB NVME flash disk (OS, Fedora Server 33)
+* 16x port SATA host bus adapter
 * 8x 14 TB hard drives for plots storage
+```
+# each drive configured individually
+# i=1; for d in sd{k..r}; do id=$(printf "%02d" $i); echo "mkfs.ext4 /dev/$d -T largefile4 -m 0 -L disk${id} &"; i=$((i+1)); done
+# above line will produce next
+mkfs.ext4 /dev/sdk -T largefile4 -m 0 -L disk01 &
+mkfs.ext4 /dev/sdl -T largefile4 -m 0 -L disk02 &
+mkfs.ext4 /dev/sdm -T largefile4 -m 0 -L disk03 &
+mkfs.ext4 /dev/sdn -T largefile4 -m 0 -L disk04 &
+mkfs.ext4 /dev/sdo -T largefile4 -m 0 -L disk05 &
+mkfs.ext4 /dev/sdp -T largefile4 -m 0 -L disk06 &
+mkfs.ext4 /dev/sdq -T largefile4 -m 0 -L disk07 &
+mkfs.ext4 /dev/sdr -T largefile4 -m 0 -L disk08 &
+```
 * 10x 400 GB 3710 flash drives for scratch storage
 ```
 # configured as RAID-0 using LVM and formatted with XFS
+vgcreate sata_scratch01 /dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj
+lvcreate --type raid0 --stripes 10 --stripesize 1024 -l 100%free -n plots sata_scratch01
+mkfs.xfs /dev/sata_scratch01/plots -L scratch01
+mkdir -p /chia/scratch/disk01
+mount -L scratch01 /chia/scratch/disk01
 ```
-### AMD 3700x based
 
 ## Server Case Farmers (that can plot too)
 My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
