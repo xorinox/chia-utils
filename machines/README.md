@@ -50,6 +50,10 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 ### Intel
 * 4 core 4770k (pretty old, but you can find used ones on eBay)
 * [10 core 10900x](https://amzn.to/32xt74E) 125 W
+## RAM
+I use almost exclusively DDR4 from G.Skill
+* 16 GB 3600 MHz CL16 modules
+* 32 GB 3600 MHz CL16 modules
 ## Motherboards
 * [ASRock X570 Taichi](https://amzn.to/3dBQmAG)
 * [ASRock B550 Taichi](https://amzn.to/3aJhw75) 
@@ -62,8 +66,10 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 * [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                                                                        
 * [MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
 ## Desktop Case Plotters
-I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU. 
-## Server Case Farmers
+I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU.
+### AMD 3700x based
+
+## Server Case Farmers (that can plot too)
 My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
 ## DIY Farmers
 
