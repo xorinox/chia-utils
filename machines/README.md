@@ -1,6 +1,7 @@
 DRAFT (this is a working document)  
 There are different approaches for plotting, with different price tags and other features. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine involved, sooner or later networking becomes really important. For every build that I put together I cared a lot about minimizing I/O contention. I am using the term machine as a synonym for computer or server.
 ## Questionaire to inform Architecture
+As for Chia plotting and system design, the goal should always be, how can I saturate the systems PCIe bandwidth with disk IO (scratch/temp writes). Do I have enough cores to saturate available IO bandwidth? Do I porvide enough disk IO to fully support all available cores?  
 * How many terabytes of Chia plot files are my goal?
   * Do I need several computer/server cases?
     * How do I plan to transfer plots in between machines?
@@ -51,7 +52,7 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 * 4 core 4770k (pretty old, but you can find used ones on eBay)
 * [10 core 10900x](https://amzn.to/32xt74E) 125 W
 ## RAM
-I use exclusively DDR4 from G.Skill and Corsair.
+I exclusively use DDR4 from G.Skill and Corsair.
 ### G.Skill
 * 16 GB 3200 MHz CL16 modules [Trident Z Royal Silver 2 x 16 GB](https://amzn.to/3dDiJyC)
 * 16 GB 3600 MHz CL16 modules [Trident Z NEO Series 2 x 16 GB](https://amzn.to/3at2SQX)
