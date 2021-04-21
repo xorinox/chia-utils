@@ -2,8 +2,7 @@ DRAFT (this is a working document)
 There are different approaches for plotting, with different price tags and other features. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine involved, sooner or later networking becomes really important. For every build that I put together I cared a lot about minimizing I/O contention. I am using the term machine as a synonym for computer or server.
 ## Questionaire to inform Architecture
 * How many terabytes of Chia plot files are my goal?
-  * Does it fit into one case?
-  * Do I need several cases?
+  * Do I need several computer/server cases?
     * How do I plan to transfer plots in between machines?
 * What do I do with the plotting capacity/compute power, when I am finished plotting?
 * How many computer parts do I already own and can be reused in any form?
