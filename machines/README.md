@@ -73,7 +73,7 @@ I use exclusively DDR4 from G.Skill and Corsair.
 * [MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
 ## Desktop Case Plotters
 I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU.
-### 3700x based
+### 3700x based (no overclocking)
 * 64 GB 3200 MHz RAM
 * 512 GB NVME flash disk (OS, Fedora Server 33)
 * 16x port SATA host bus adapter
@@ -124,7 +124,7 @@ screen -d -m -S sata6_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sl
 screen -d -m -S sata7_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 180m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk07 -d /chia/plots/disk07 |& tee /chia/plots/logs/sata7_1.0.5_128.log'
 screen -d -m -S sata8_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 185m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk08 -d /chia/plots/disk08 |& tee /chia/plots/logs/sata8_1.0.5_128.log'
 ```
-* Approximate plotting speed
+* Approximate plotting speed, **3.18 TiB/day**
 ```
 procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 80 K32 plots, avg 21518.9 seconds, 3.18 TiB/day
