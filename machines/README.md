@@ -1,4 +1,4 @@
-DRAFT  
+DRAFT (this is a working document)  
 There are different approaches for plotting, with different price tags and other features. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine involved, sooner or later networking becomes really important. For every build that I put together I cared a lot about minimizing I/O contention. I am using the term machine as a synonym for computer or server.
 ## Questionaire to inform Architecture
 * How many terabytes of Chia plot files are my goal?
@@ -132,4 +132,3 @@ procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{s
 ## Server Case Farmers (that can plot too)
 My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
 ## DIY Farmers
-
