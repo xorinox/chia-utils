@@ -101,7 +101,7 @@ LABEL=disk06 /chia/plots/disk06 ext4 defaults,nofail 0 0
 LABEL=disk07 /chia/plots/disk07 ext4 defaults,nofail 0 0
 LABEL=disk08 /chia/plots/disk08 ext4 defaults,nofail 0 0
 ```
-* 10x 400 GB 3710 flash drives for scratch storage
+* 10x 400 GB Intel DC S3710 flash drives for scratch storage
 ```
 # Configured as RAID-0 using LVM and formatted with XFS
 vgcreate sata_scratch01 /dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj
@@ -112,7 +112,23 @@ mkdir -p /chia/scratch/disk01
 # next line can be added to /etc/fstab
 LABEL=scratch01 /chia/scratch/disk01 xfs defaults,nofail 0 0
 ```
-
+* Plotting assumes the chia software to be installed and configured into /chia/plotting. This will start 8 concurrent processes that make each local hard drive full.
+```
+mkdir -p /chia/plots/logs
+screen -d -m -S sata1_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 0m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk01 -d /chia/plots/disk01 |& tee /chia/plots/logs/sata1_1.0.5_128.log'
+screen -d -m -S sata2_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 5m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk02 -d /chia/plots/disk02 |& tee /chia/plots/logs/sata2_1.0.5_128.log'
+screen -d -m -S sata3_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 60m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk03 -d /chia/plots/disk03 |& tee /chia/plots/logs/sata3_1.0.5_128.log'
+screen -d -m -S sata4_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 65m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk04 -d /chia/plots/disk04 |& tee /chia/plots/logs/sata4_1.0.5_128.log'
+screen -d -m -S sata5_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 120m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk05 -d /chia/plots/disk05 |& tee /chia/plots/logs/sata5_1.0.5_128.log'
+screen -d -m -S sata6_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 125m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk06 -d /chia/plots/disk06 |& tee /chia/plots/logs/sata6_1.0.5_128.log'
+screen -d -m -S sata7_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 180m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk07 -d /chia/plots/disk07 |& tee /chia/plots/logs/sata7_1.0.5_128.log'
+screen -d -m -S sata8_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 185m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk08 -d /chia/plots/disk08 |& tee /chia/plots/logs/sata8_1.0.5_128.log'
+```
+* Approximate plotting speed
+```
+procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+80 K32 plots, avg 21518.9 seconds, 3.18 TiB/day
+```
 ## Server Case Farmers (that can plot too)
 My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
 ## DIY Farmers
