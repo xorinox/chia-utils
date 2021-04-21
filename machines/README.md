@@ -70,10 +70,11 @@ I use exclusively DDR4 from G.Skill and Corsair.
 * Asus Z87-Deluxe/Quad (pretty old, but you can find used ones on eBay)                                     
 * [Gigabyte TRX40 Aorus Master](https://amzn.to/3v9S4z1) 
 * [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                                                                        
-* [MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
+* [MSI MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
 ## Desktop Case Plotters
 I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU.
 ### 3700x based (no overclocking)
+* The MSI MGP motherboard
 * 64 GB 3200 MHz RAM
 * 512 GB NVME flash disk (OS, Fedora Server 33)
 * 16x port SATA host bus adapter
