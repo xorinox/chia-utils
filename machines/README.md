@@ -79,17 +79,26 @@ I have tried a many different cases, but my favorite turn out to be the [Thermal
 * 16x port SATA host bus adapter
 * 8x 14 TB hard drives for plots storage
 ```
-# each drive configured individually
-# i=1; for d in sd{k..r}; do id=$(printf "%02d" $i); echo "mkfs.ext4 /dev/$d -T largefile4 -m 0 -L disk${id} &"; i=$((i+1)); done
-# above line will produce next
-mkfs.ext4 /dev/sdk -T largefile4 -m 0 -L disk01 &
-mkfs.ext4 /dev/sdl -T largefile4 -m 0 -L disk02 &
-mkfs.ext4 /dev/sdm -T largefile4 -m 0 -L disk03 &
-mkfs.ext4 /dev/sdn -T largefile4 -m 0 -L disk04 &
-mkfs.ext4 /dev/sdo -T largefile4 -m 0 -L disk05 &
-mkfs.ext4 /dev/sdp -T largefile4 -m 0 -L disk06 &
-mkfs.ext4 /dev/sdq -T largefile4 -m 0 -L disk07 &
-mkfs.ext4 /dev/sdr -T largefile4 -m 0 -L disk08 &
+# each drive configured individually, assumes 8 hard drives that are devices sdk through sdr
+i=1; 
+for d in sd{k..r}; do
+  id=$(printf "%02d" $i);
+  mkfs.ext4 /dev/$d -T largefile4 -m 0 -L "disk${id}" -F &
+  mkdir -p "/chia/plots/disk${id}"
+  echo "LABEL=disk${id} /chia/plots/disk${id} ext4 defaults,nofail 0 0"
+  i=$((i+1))
+done
+wait
+
+# above line will produce next few lines that can be added manually to /etc/fstab I prefer to not change system etc files automatically, but could be done too.
+LABEL=disk01 /chia/plots/disk01 ext4 defaults,nofail 0 0
+LABEL=disk02 /chia/plots/disk02 ext4 defaults,nofail 0 0
+LABEL=disk03 /chia/plots/disk03 ext4 defaults,nofail 0 0
+LABEL=disk04 /chia/plots/disk04 ext4 defaults,nofail 0 0
+LABEL=disk05 /chia/plots/disk05 ext4 defaults,nofail 0 0
+LABEL=disk06 /chia/plots/disk06 ext4 defaults,nofail 0 0
+LABEL=disk07 /chia/plots/disk07 ext4 defaults,nofail 0 0
+LABEL=disk08 /chia/plots/disk08 ext4 defaults,nofail 0 0
 ```
 * 10x 400 GB 3710 flash drives for scratch storage
 ```
@@ -98,7 +107,9 @@ vgcreate sata_scratch01 /dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /d
 lvcreate --type raid0 --stripes 10 --stripesize 1024 -l 100%free -n plots sata_scratch01
 mkfs.xfs /dev/sata_scratch01/plots -L scratch01
 mkdir -p /chia/scratch/disk01
-mount -L scratch01 /chia/scratch/disk01
+
+# next line can be added to /etc/fstab
+LABEL=scratch01 /chia/scratch/disk01 xfs defaults,nofail 0 0
 ```
 
 ## Server Case Farmers (that can plot too)
