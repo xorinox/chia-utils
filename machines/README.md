@@ -79,7 +79,7 @@ I have tried a many different cases, but my favorite turn out to be the [Thermal
 * 16x port SATA host bus adapter
 * 8x 14 TB hard drives for plots storage
 ```
-# each drive configured individually, assumes 8 hard drives that are devices sdk through sdr
+# Each drive configured individually, assumes 8 hard drives that are devices sdk through sdr
 i=1; 
 for d in sd{k..r}; do
   id=$(printf "%02d" $i);
@@ -90,7 +90,8 @@ for d in sd{k..r}; do
 done
 wait
 
-# above line will produce next few lines that can be added manually to /etc/fstab I prefer to not change system etc files automatically, but could be done too.
+# Above line will produce next few lines that can be added manually to /etc/fstab.
+# I prefer to not change system etc files automatically, but could be done too.
 LABEL=disk01 /chia/plots/disk01 ext4 defaults,nofail 0 0
 LABEL=disk02 /chia/plots/disk02 ext4 defaults,nofail 0 0
 LABEL=disk03 /chia/plots/disk03 ext4 defaults,nofail 0 0
@@ -102,7 +103,7 @@ LABEL=disk08 /chia/plots/disk08 ext4 defaults,nofail 0 0
 ```
 * 10x 400 GB 3710 flash drives for scratch storage
 ```
-# configured as RAID-0 using LVM and formatted with XFS
+# Configured as RAID-0 using LVM and formatted with XFS
 vgcreate sata_scratch01 /dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj
 lvcreate --type raid0 --stripes 10 --stripesize 1024 -l 100%free -n plots sata_scratch01
 mkfs.xfs /dev/sata_scratch01/plots -L scratch01
