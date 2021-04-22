@@ -150,8 +150,7 @@ procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{s
 * Approximate plotting speed (v1.0.4), **8.87 TiB/day**  
 24 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
 ```
-procs=24; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {prin
-tf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+procs=24; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 161 K32 plots, avg 23137.0 seconds, 8.87 TiB/day
 ```
 ### 10900k based 10 cores (motherboard controlled OC)
@@ -167,8 +166,7 @@ tf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 * Approximate plotting speed (v1.0.4), **4.37 TiB/day**  
 10 concurrent plotting processes, using bitfield, 10 threads per process and some staggering.
 ```
-procs=10; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=
-sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+procs=10; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 144 K32 plots, avg 19579.4 seconds, 4.37 TiB/day
 ```
 ## Server Case Farmers (that can plot too)
