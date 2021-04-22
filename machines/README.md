@@ -133,14 +133,14 @@ procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{s
 80 K32 plots, avg 21518.9 seconds, 3.18 TiB/day
 ```
 ### 3960x based 24 cores (no overclocking)
-* The TRX40 Aorus Master motherboard
+* TRX40 Aorus Master motherboard
 * 128 GB 3000 MHz RAM (Corsair), CL15 (XMP enabled)
 * 512 GB NVME flash disk (OS, Fedora Server 33)
 * Two 16x port SATA host bus adapters
 * 12x 14 TB hard drives for plots storage
 * 24x 400 GB Intel DC S3710 flash drives for scratch storage (three Athena enclosures)
 ```
-# configured as two RAID-0 volumes of each 12 SSDs, folling same example as above
+# configured as two RAID-0 volumes of each 12 SSDs, following same example as above
 ```
 * 6x 1TB NVME SSD (2 onboard, 4 in the Gigabyte adapter)
 ```
@@ -155,7 +155,15 @@ tf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 161 K32 plots, avg 23137.0 seconds, 8.87 TiB/day
 ```
 ### 10900k based 10 cores (motherboard controlled OC)
-...
+* Asus Formula motherboard
+* 64 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled)
+* 512 GB NVME flash disk (OS, Fedora Server 33)
+* 16x port SATA host bus adapter
+* 8x 16 TB hard drives for plots storage
+* 16x 400 GB Intel DC S3710 flash drives for scratch storage
+```
+# configured as one RAID-0 volumes of 16 SSDs, following same example as above
+```
 * Approximate plotting speed (v1.0.4), **4.37 TiB/day**
 10 concurrent plotting processes, using bitfield, 10 threads per process and some staggering.
 ```
