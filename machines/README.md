@@ -169,7 +169,7 @@ delays: proc1 -> 0m, proc2 -> 5m, proc3 -> 90m, proc4 -> 95m, proc5 -> 180m, pro
 The system can do more, about 3.8 TiB/day with 10 concurrent processes and 10 threads each.
 ```
 procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
-144 K32 plots, avg 19579.4 seconds, 4.37 TiB/day
+144 K32 plots, avg 19579.4 seconds, 3.49 TiB/day
 ```
 ## Server Case Farmers (that can plot too)
 My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
