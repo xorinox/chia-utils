@@ -163,10 +163,12 @@ procs=24; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{
 ```
 # configured as one RAID-0 volumes of 16 SSDs, following same example as above
 ```
-* Approximate plotting speed (v1.0.4), **4.37 TiB/day**  
-10 concurrent plotting processes, using bitfield, 10 threads per process and some staggering.
+* Approximate plotting speed (v1.0.4), **3.49 TiB/day**  
+8 concurrent plotting processes, using bitfield, 16 threads per process and some staggering:  
+delays: proc1 -> 0m, proc2 -> 5m, proc3 -> 90m, proc4 -> 95m, proc5 -> 180m, proc6 -> 185m, proc7 -> 270m, proc8 -> 275m  
+The system can do more, about 3.8 TiB/day with 10 concurrent processes and 10 threads each.
 ```
-procs=10; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 144 K32 plots, avg 19579.4 seconds, 4.37 TiB/day
 ```
 ## Server Case Farmers (that can plot too)
