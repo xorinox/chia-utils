@@ -135,7 +135,7 @@ procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{s
 * The TRX40 Aorus Master motherboard
 * 128 GB 3000 MHz RAM (Corsair), CL15 (XMP enabled)
 * 512 GB NVME flash disk (OS, Fedora Server 33)
-* Two 16x port SATA host bus adapter
+* Two 16x port SATA host bus adapters
 * 12x 14 TB hard drives for plots storage
 * 24x 400 GB Intel DC S3710 flash drives for scratch storage (three Athena enclosures)
 ```
