@@ -126,7 +126,7 @@ screen -d -m -S sata6_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sl
 screen -d -m -S sata7_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 180m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk07 -d /chia/plots/disk07 |& tee /chia/plots/logs/sata7_1.0.5_128.log'
 screen -d -m -S sata8_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 185m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk08 -d /chia/plots/disk08 |& tee /chia/plots/logs/sata8_1.0.5_128.log'
 ```
-* Approximate plotting speed (v1.0.4), **3.18 TiB/day**
+* Approximate plotting speed (v1.0.4), **3.18 TiB/day**  
 8 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
 ```
 procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
@@ -147,7 +147,7 @@ procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{s
 # configured as three RAID-0 volumes of each 2 NVMEs, folling same example as above
 ```
 * Plotting on this system, is different to the 3700x example as I use for -2 the one of the three NVME based volumes. That reduces the IO load on the SSD based volume for the last two phases.
-* Approximate plotting speed (v1.0.4), **8.87 TiB/day**
+* Approximate plotting speed (v1.0.4), **8.87 TiB/day**  
 24 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
 ```
 procs=24; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {prin
@@ -164,7 +164,7 @@ tf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 ```
 # configured as one RAID-0 volumes of 16 SSDs, following same example as above
 ```
-* Approximate plotting speed (v1.0.4), **4.37 TiB/day**
+* Approximate plotting speed (v1.0.4), **4.37 TiB/day**  
 10 concurrent plotting processes, using bitfield, 10 threads per process and some staggering.
 ```
 procs=10; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=
