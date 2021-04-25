@@ -25,3 +25,6 @@ Killed
 nfs
 ```
 # Scripts
+## Keep the spindles spinning (wake-up-hdd.sh)
+It is my belief that the spindles will live longer if they spinn 24/7 instead of spinning down and up all the time. The Chia farming workload and thanks to the 512 filter access drives only so often. We also do not want the farming response delayed due to spinning up a drive first that contains the eligible plot.
+If you look at 
