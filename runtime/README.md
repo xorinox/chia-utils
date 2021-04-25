@@ -1,4 +1,4 @@
-These are examples on how I do certain things. These are not best or good practices. I am always happy to learn how the "thing" can be done differently or how my lines can be improved.
+These are examples on how I do certain things. These are not best or good practices. I am always happy to learn how the "thing" can be done differently or how my lines could be improved.
 # One Line
 ## How do I count my plot files
 ```
