@@ -25,6 +25,6 @@ Killed
 nfs
 ```
 # Scripts
-## Keep the spindles spinning (wake-up-hdd.sh)
+## Keep the spindles spinning [wake-up-hdd.sh](https://github.com/xorinox/chia-utils/blob/main/runtime/wake-up-hdd.sh)
 It is my belief that the spindles will live longer if they spinn 24/7 instead of spinning down and up all the time. The Chia farming workload and thanks to the 512 filter access drives only so often. We also do not want the farming response delayed due to spinning up a drive first that contains the eligible plot.
-If you look at 
+The basic idea is to read a few random blocks from one randomly selected plot file from each mounted drive. And then we do this frequently. This will only read a very small amount of data, does not do many seeks and will not harm the harddrive.
