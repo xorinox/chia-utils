@@ -80,7 +80,7 @@ I have tried a many different cases, but my favorite turn out to be the [Thermal
 * 64 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled)
 * 512 GB NVME flash disk (OS, Fedora Server 33)
 * 16x port SATA host bus adapter
-* 8x 14 TB hard drives for plots storage
+* 8x 8 TB hard drives for plots storage
 ```
 # Each drive configured individually, assumes 8 hard drives that are devices sdk through sdr
 i=1; 
@@ -130,36 +130,15 @@ screen -d -m -S sata8_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sl
 * Approximate plotting speed (v1.0.4), **3.18 TiB/day**  
 8 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
 ```
-procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+procs=8; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 80 K32 plots, avg 21518.9 seconds, 3.18 TiB/day
-```
-### 3960x based 24 cores (no overclocking)
-* TRX40 Aorus Master motherboard
-* 128 GB 3000 MHz RAM (Corsair), CL15 (XMP enabled)
-* 512 GB NVME flash disk (OS, Fedora Server 33)
-* Two 16x port SATA host bus adapters
-* 12x 14 TB hard drives for plots storage
-* 24x 400 GB Intel DC S3710 flash drives for scratch storage (three Athena enclosures)
-```
-# configured as two RAID-0 volumes of each 12 SSDs, following same example as above
-```
-* 6x 1TB NVME SSD (2 onboard, 4 in the Gigabyte adapter)
-```
-# configured as three RAID-0 volumes of each 2 NVMEs, folling same example as above
-```
-* Plotting on this system, is different to the 3700x example as I use for -2 the one of the three NVME based volumes. That reduces the IO load on the SSD based volume for the last two phases.
-* Approximate plotting speed (v1.0.4), **8.87 TiB/day**  
-24 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
-```
-procs=24; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
-161 K32 plots, avg 23137.0 seconds, 8.87 TiB/day
 ```
 ### 10900k based 10 cores (motherboard controlled OC)
 * Asus Formula motherboard
 * 64 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled)
-* 512 GB NVME flash disk (OS, Fedora Server 33)
+* 512 GB NVME flash drive (OS, Fedora Server 33)
 * 16x port SATA host bus adapter
-* 8x 16 TB hard drives for plots storage
+* 8x 8 TB hard drives for plots storage
 * 16x 400 GB Intel DC S3710 flash drives for scratch storage
 ```
 # configured as one RAID-0 volumes of 16 SSDs, following same example as above
@@ -169,8 +148,50 @@ procs=24; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{
 delays: proc1 -> 0m, proc2 -> 5m, proc3 -> 90m, proc4 -> 95m, proc5 -> 180m, proc6 -> 185m, proc7 -> 270m, proc8 -> 275m  
 The system can do more, about 3.8 TiB/day with 10 concurrent processes and 10 threads each.
 ```
-procs=8; grep -a -i "total time" /chia/plots/logs/sata*.log |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+procs=8; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 144 K32 plots, avg 19579.4 seconds, 3.49 TiB/day
+```
+### 2950x based 16 cores (no overclocking)
+* ASRock X399 Taichi
+* 128 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled, but run at 2933 MHz)
+* 256 GB SATA flash drive (OS, Fedora Server 33, via $30 SATA HBA PCIe 1x)
+* 8x port SATA host bus adapter
+* 8x 8 TB hard drives for plots storage (onboard HBA)
+* 8x 400 GB Intel DC S3710 flash drives for scratch storage (dedicated HBA)
+```
+# configured as two RAID-0 volumes of each 8 SSDs
+```
+* 3x 1TB NVME SSD (3 onboard, all from Microcenter Inland)
+```
+# configured as one RAID-0 volumes 3 NVMEs
+```
+* Plotting on this system, due to lack of temp space I only run 12 plotting processes at once. The Inland NVME do not scale well. Ut the system should really be laoded with at last 16 concurrent plotting processes. I had it split into 6 processes use the NVME based temp volume and the 6 processes use the SATA SSD based temp volume.
+* Approximate plotting speed (beta23), **3.98 TiB/day**  
+12 concurrent plotting processes, without bitfield, 512 buckets (yes I hacked the code), 8 threads per process and some staggering.
+```
+procs=12; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+146 K32 plots, avg 25797.8 seconds, 3.98 TiB/day
+```
+### 3960x based 24 cores (no overclocking)
+* TRX40 Aorus Master motherboard
+* 128 GB 3000 MHz RAM (Corsair), CL15 (XMP enabled)
+* 512 GB NVME flash drive (OS, Fedora Server 33)
+* Two 16x port SATA host bus adapters
+* 12x 14 TB hard drives for plots storage
+* 24x 400 GB Intel DC S3710 flash drives for scratch storage (three Athena enclosures)
+```
+# configured as two RAID-0 volumes of each 12 SSDs
+```
+* 6x 1TB NVME SSD (2 onboard, 4 in the Gigabyte adapter)
+```
+# configured as three RAID-0 volumes of each 2 NVMEs
+```
+* Plotting on this system, is different to the 3700x example as I use for -2 the one of the three NVME based volumes. That reduces the IO load on the SSD based volume for the last two phases.
+* Approximate plotting speed (v1.0.4), **8.87 TiB/day**  
+24 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
+```
+procs=24; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
+161 K32 plots, avg 23137.0 seconds, 8.87 TiB/day
 ```
 ## Server Case Farmers (that can plot too)
 My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
