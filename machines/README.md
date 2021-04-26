@@ -46,6 +46,7 @@ I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied 
 * [8 core 3700x](https://amzn.to/3aoL4GU) 65 W
 * [8 core 3800x](https://amzn.to/3xaoCec) 105 W
 * [8 core 5800x](https://amzn.to/3v3MgHq) 105 W
+* [16 core 5950x](https://amzn.to/32S3ZFC) 105 W
 * [16 core 2950x](https://amzn.to/3n39v1q) 180 W
 * [24 core 3960x](https://amzn.to/3v5JSQn) 280 W
 ### Intel
