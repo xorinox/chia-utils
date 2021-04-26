@@ -1,10 +1,10 @@
-DRAFT (this is a working document)  
+DRAFT (this is a working document)  
 There are different approaches for plotting, with different price tags and other features. There is not one single correct approach. They all have pros and cons. If you choose an architecture with more than one machine involved, sooner or later networking becomes really important. For every build that I put together I cared a lot about minimizing I/O contention. I am using the term machine as a synonym for computer or server.
-## Questionaire to inform Architecture
-As for Chia plotting and system design, the goal should be to saturate the systems PCIe bandwidth with disk IO (scratch/temp writes). Do I have enough cores to saturate available IO bandwidth? Do I porvide enough disk IO to fully support all available cores?  
+## Questionnaire to inform Architecture
+As for Chia plotting and system design, the goal should be to saturate the systems PCIe bandwidth with disk IO (scratch/temp writes). Do I have enough cores to saturate available IO bandwidth? Do I provide enough disk IO to fully support all available cores?  
 * How many terabytes of Chia plot files are my goal?
-  * Do I need several computer/server cases?
-    * How do I plan to transfer plots in between machines?
+  * Do I need several computer/server cases?
+    * How do I plan to transfer plots in between machines?
 * What do I do with the plotting capacity/compute power, when I am finished plotting?
 * How many computer parts do I already own and can be reused in any form?
 ## Temporary Storage (scratch)
@@ -15,7 +15,7 @@ As for Chia plotting and system design, the goal should be to saturate the syste
 ## Final Storage (plots)
 * Hard drives various brands and sizes between 3 and 18 TB, SATA only, internal and shucked external.
 # Parts List
-Components listed below have been used to create various different plotters and farmers. In the sections below I will refer to them and not always spell out the exact model every time, that saves me time and should make for an easier read.  
+Components listed below have been used to create various different plotters and farmers. In the sections below I will refer to them and not always spell out the exact model every time, that saves me time and should make for an easier read.  
 ## Adapters (HBA, RAID, U.2 to M.2, M.2 to PCIe)
 * [Adaptec ASR 71605 16 Port](https://amzn.to/3v9Wztp) SAS/SATA RAID PCIe v3, 8x
 * [LSI SAS 9300-8I 8 Port](https://amzn.to/32wBddD) SAS/SATA HBA PCIe v3, 8x
@@ -23,7 +23,7 @@ Components listed below have been used to create various different plotters and 
 * [Gigabyte GC-4XM2G4](https://amzn.to/3xeNLEv) PCIe v4, 16x (4x M.2 to PCIe)
 * [SYBA SI-ADA40121](https://amzn.to/3suThzq) PCIe v3, 4x (U.2 SFF-8639 to M.2 M-Key)
 ## Temporary Storage (Scratch)
-I have used mostly used enterprise grade SATA SSD from eBay. The pricing varied from as low as $55 per item to $399. The most expensive drives were the new from Amazon 2 TB Gigabyte Aorus, the cheapest ones used Intel DC S3610 400 GB (eBay and Amazon used).
+I have mostly used enterprise grade SATA SSD from eBay. The pricing varied from as low as $55 per item to $399. The most expensive drives were the new from Amazon 2 TB Gigabyte Aorus, the cheapest ones used Intel DC S3610 400 GB (eBay and Amazon used).
 ### SATA 6 Gb/s
 * Intel DC S3610 400 GB, 3000 TBW
 * Intel DC S3700 400 GB, 7300 TBW
@@ -65,13 +65,13 @@ I exclusively use DDR4 from G.Skill and Corsair.
 * [ASRock X570 Taichi](https://amzn.to/3dBQmAG)
 * [ASRock B550 Taichi](https://amzn.to/3aJhw75) 
 * [ASRock X399 Taichi](https://amzn.to/3tCxs2i)
-* [Asus TUF Gaming X570-PLUS (WI-FI)](https://amzn.to/3xcebqv)      
-* [Asus ROG Crosshair VIII Hero](https://amzn.to/3gpMHYw)                        
-* [Asus ROG Maximus XII Formula](https://amzn.to/3glpqqK)                             
-* Asus Z87-Deluxe/Quad (pretty old, but you can find used ones on eBay)                                     
+* [Asus TUF Gaming X570-PLUS (WI-FI)](https://amzn.to/3xcebqv)      
+* [Asus ROG Crosshair VIII Hero](https://amzn.to/3gpMHYw)                        
+* [Asus ROG Maximus XII Formula](https://amzn.to/3glpqqK)                             
+* Asus Z87-Deluxe/Quad (pretty old, but you can find used ones on eBay)                                     
 * [Gigabyte TRX40 Aorus Master](https://amzn.to/3v9S4z1) 
-* [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                                                                        
-* [MSI MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
+* [Gigabyte X570 Aorus Pro WIFI](https://amzn.to/3gsqvNs)                                                                        
+* [MSI MPG X570 Gaming Edge WIFI](https://amzn.to/2QaFhOj)     
 ## Desktop Case Plotters
 I have tried a many different cases, but my favorite turn out to be the [Thermaltake Core V71 Tempered Glass Edition E-ATX](https://amzn.to/3gqekkd), that features huge but silent fans and room for 16x 7mm SATA SSDs via 2x Athena enclosures in the 5.25" slots. The case can house 8x 3.5 internal HDD and is roomy enough for many liquid cooling options. For all but the Threadripper CPUs I am using the liquid cooling [Corsair H115i 280mm](https://amzn.to/3auszk6) but others work too. This cooler provided enough cooling for the 5800x to run stable at 4.7 GHz all cores. For the Threadripper CPUs I am using the [NZXT Kraken X73 360mm](https://amzn.to/3gyiTc6) liquid cooler. Not overclocking these, works perfectly fine, even without covering the entire CPU.
 ### 3700x based, 8 cores (no overclocking)
@@ -80,16 +80,16 @@ I have tried a many different cases, but my favorite turn out to be the [Thermal
 * 64 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled)
 * 512 GB NVME flash disk (OS, Fedora Server 33)
 * 16x port SATA host bus adapter
-* 8x 8 TB hard drives for plots storage
+* 8x 8 TB hard drives for plots storage (on onboard SATA HBA)
 ```
 # Each drive configured individually, assumes 8 hard drives that are devices sdk through sdr
 i=1; 
 for d in sd{k..r}; do
-  id=$(printf "%02d" $i);
-  mkfs.ext4 /dev/$d -T largefile4 -m 0 -L "disk${id}" -F &
-  mkdir -p "/chia/plots/disk${id}"
-  echo "LABEL=disk${id} /chia/plots/disk${id} ext4 defaults,nofail 0 0"
-  i=$((i+1))
+  id=$(printf "%02d" $i);
+  mkfs.ext4 /dev/$d -T largefile4 -m 0 -L "disk${id}" -F &
+  mkdir -p "/chia/plots/disk${id}"
+  echo "LABEL=disk${id} /chia/plots/disk${id} ext4 defaults,nofail 0 0"
+  i=$((i+1))
 done
 wait
 
@@ -104,7 +104,7 @@ LABEL=disk06 /chia/plots/disk06 ext4 defaults,nofail 0 0
 LABEL=disk07 /chia/plots/disk07 ext4 defaults,nofail 0 0
 LABEL=disk08 /chia/plots/disk08 ext4 defaults,nofail 0 0
 ```
-* 10x 400 GB Intel DC S3710 flash drives for scratch storage
+* 10x 400 GB Intel DC S3710 flash drives for scratch storage (on dedicate SATA HBA, one Athena 8x 2.5 SATA bays, 2x hang around the case)
 ```
 # Configured as RAID-0 using LVM and formatted with XFS
 vgcreate sata_scratch01 /dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj
@@ -127,7 +127,7 @@ screen -d -m -S sata6_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sl
 screen -d -m -S sata7_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 180m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk07 -d /chia/plots/disk07 |& tee /chia/plots/logs/sata7_1.0.5_128.log'
 screen -d -m -S sata8_1.0.5_128 bash -c 'cd /chia/plotting && . ./activate && sleep 185m && chia plots create -k 32 -b 3700 -r 8 -u 128 -s 65536 -n 128 -f -your-key -p -your-key -t /chia/plots/disk01 -2 /chia/plots/disk08 -d /chia/plots/disk08 |& tee /chia/plots/logs/sata8_1.0.5_128.log'
 ```
-* Approximate plotting speed (v1.0.4), **3.18 TiB/day**  
+* Approximate plotting speed (v1.0.4), **3.18 TiB/day**  
 8 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
 ```
 procs=8; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
@@ -138,26 +138,50 @@ procs=8; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=
 * 64 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled)
 * 512 GB NVME flash drive (OS, Fedora Server 33)
 * 16x port SATA host bus adapter
-* 8x 8 TB hard drives for plots storage
-* 16x 400 GB Intel DC S3710 flash drives for scratch storage
+* 8x 8 TB hard drives for plots storage (onboard SATA HBA)
+* 16x 400 GB Intel DC S3710 flash drives for scratch storage (on dedicate SATA HBA, two Athena 8x 2.5 SATA bays)
 ```
 # configured as one RAID-0 volumes of 16 SSDs, following same example as above
 ```
-* Approximate plotting speed (v1.0.4), **3.49 TiB/day**  
-8 concurrent plotting processes, using bitfield, 16 threads per process and some staggering:  
-delays: proc1 -> 0m, proc2 -> 5m, proc3 -> 90m, proc4 -> 95m, proc5 -> 180m, proc6 -> 185m, proc7 -> 270m, proc8 -> 275m  
+* Approximate plotting speed (v1.0.4), **3.49 TiB/day**  
+8 concurrent plotting processes, using bitfield, 16 threads per process and some staggering:  
+delays: proc1 -> 0m, proc2 -> 5m, proc3 -> 90m, proc4 -> 95m, proc5 -> 180m, proc6 -> 185m, proc7 -> 270m, proc8 -> 275m  
 The system can do more, about 3.8 TiB/day with 10 concurrent processes and 10 threads each.
 ```
 procs=8; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 144 K32 plots, avg 19579.4 seconds, 3.49 TiB/day
+```
+### 5950 based 16 cores (enabled turbo boost, no overclocking)
+* In the Thermaltake case with liquid cooling
+* Asus ROG Crosshair
+* 64 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled)
+* 512 GB NVME flash drive (OS, Fedora Server 33)
+* 16x port SATA host bus adapter
+* 8x 8 TB hard drives for plots storage (onboard SATA HBA)
+* 16x 400 GB Intel DC S3710 flash drives for scratch storage (on dedicated SATA HBA, one Athena 8x 2.5 SATA bays)
+```
+# configured as one RAID-0 volumes of 16 SSDs
+```
+* Single Plot
+```
+#fastest published K32 (32 threads, 7,000GB RAM, 128 buckets)
+Time for phase 1 = 3355.980 seconds. CPU (387.530%) Mon Apr 26 08:24:27 2021
+Time for phase 2 = 2286.865 seconds. CPU (99.830%) Mon Apr 26 09:02:34 2021
+Time for phase 3 = 4385.600 seconds. CPU (99.760%) Mon Apr 26 10:15:40 2021
+Time for phase 4 = 307.609 seconds. CPU (99.730%) Mon Apr 26 10:20:47 2021
+Total time = 10336.056 seconds. CPU (193.210%) Mon Apr 26 10:20:47 2021
+```
+* Concurrent Plotting
+```
+# yet to be collected...
 ```
 ### 2950x based 16 cores (no overclocking)
 * ASRock X399 Taichi
 * 128 GB 3200 MHz RAM (G.Skill), CL16 (XMP enabled, but run at 2933 MHz)
 * 256 GB SATA flash drive (OS, Fedora Server 33, via $30 SATA HBA PCIe 1x)
 * 8x port SATA host bus adapter
-* 8x 8 TB hard drives for plots storage (onboard HBA)
-* 8x 400 GB Intel DC S3710 flash drives for scratch storage (dedicated HBA)
+* 8x 8 TB hard drives for plots storage (onboard SATA HBA)
+* 8x 400 GB Intel DC S3710 flash drives for scratch storage (on dedicate SATA HBA, one Athena 8x 2.5 SATA bays)
 ```
 # configured as two RAID-0 volumes of each 8 SSDs
 ```
@@ -165,8 +189,8 @@ procs=8; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=
 ```
 # configured as one RAID-0 volumes 3 NVMEs
 ```
-* Plotting on this system, due to lack of temp space I only run 12 plotting processes at once. The Inland NVME do not scale well. Ut the system should really be laoded with at last 16 concurrent plotting processes. I had it split into 6 processes use the NVME based temp volume and the 6 processes use the SATA SSD based temp volume.
-* Approximate plotting speed (beta23), **3.98 TiB/day**  
+* Plotting on this system, due to lack of temp space I only run 12 plotting processes at once. The Inland NVME does not scale well. Ut the system should really be loaded with at least 16 concurrent plotting processes. I had it split into 6 processes using the NVME based temp volume and the 6 processes using the SATA SSD based temp volume.
+* Approximate plotting speed (beta23), **3.98 TiB/day**  
 12 concurrent plotting processes, without bitfield, 512 buckets (yes I hacked the code), 8 threads per process and some staggering.
 ```
 procs=12; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
@@ -177,8 +201,8 @@ procs=12; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p
 * 128 GB 3000 MHz RAM (Corsair), CL15 (XMP enabled)
 * 512 GB NVME flash drive (OS, Fedora Server 33)
 * Two 16x port SATA host bus adapters
-* 12x 14 TB hard drives for plots storage
-* 24x 400 GB Intel DC S3710 flash drives for scratch storage (three Athena enclosures)
+* 12x 14 TB hard drives for plots storage (8x onboard SATA, 4x dedicated SATA HBA)
+* 24x 400 GB Intel DC S3710 flash drives for scratch storage (on 2x dedicated SATA HBA, three Athena 8x 2.5 SATA bays)
 ```
 # configured as two RAID-0 volumes of each 12 SSDs
 ```
@@ -187,12 +211,12 @@ procs=12; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p
 # configured as three RAID-0 volumes of each 2 NVMEs
 ```
 * Plotting on this system, is different to the 3700x example as I use for -2 the one of the three NVME based volumes. That reduces the IO load on the SSD based volume for the last two phases.
-* Approximate plotting speed (v1.0.4), **8.87 TiB/day**  
+* Approximate plotting speed (v1.0.4), **8.87 TiB/day**  
 24 concurrent plotting processes, using bitfield, 8 threads per process and some staggering.
 ```
 procs=24; path="/chia/plots/logs/*.log"; grep -a -i "total time" $path |awk -v p=$procs '{sum=sum+$4} {avg=sum/NR} {tday=86400/avg*p*101.366/1024} END {printf "%d K32 plots, avg %0.1f seconds, %0.2f TiB/day \n", NR, avg, tday}'
 161 K32 plots, avg 23137.0 seconds, 8.87 TiB/day
 ```
 ## Server Case Farmers (that can plot too)
-My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internel 3.5 HDD and with some DIY skills and crativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
+My goto server case turned out to be the [Rosewill RSV-L4500](https://amzn.to/3tDs3b4) that has room for even E-ATX motherboards, 15x internal 3.5 HDD and with some DIY skills and creativity you can also mount liquid cooling inside, I have two farmers that cool the CPU using the already mentioned [Corsair H115i 280mm](https://amzn.to/3auszk6).
 ## DIY Farmers
